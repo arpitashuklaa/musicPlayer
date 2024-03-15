@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Music Player</title>
+  <link rel="stylesheet" type="text/css" href="Player.css" />
+  <script src="https://kit.fontawesome.com/f41409ba57.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="player-info">
+    <div class="info-1">
+      <div class="info-0">
+        <img
+          src="data:image/png;base64,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">
+      </div>
+      <div class="text">
+        <div class="text-1">Ninjas</div>
+        <div class="text-2">Studio</div>
+      </div>
+    </div>
+    <div class="favourite">
+      <p>Favourite</p>
+    </div>
+
+    <div class="search-bar">
+      <input class="search" type="search" placeholder="Search...">
+      <p class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></p>
+      <p class="mic-icon"><i class="fa-solid fa-microphone"></i></p>
+
+    </div>
+    <div class="bell">
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <div class="profile-pic">
+      <img class="profile-img"
+        src="https://images.pexels.com/photos/6670752/pexels-photo-6670752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    </div>
+  </div>
+  <div class="player">
+    <div class="player-1"></div>
+    <div class="player-2">
+      <div class="box1">
+        <div class="song">
+          <img class="image" src="images/pexels-khoa-võ-5430077.jpg" />
+        </div>
+        <div class="song">
+          <img class="image" src="images/pexels-pavel-danilyuk-7521317.jpg" />
+        </div>
+        <div class="song">
+          <img class="image" src="images/pexels-tima-miroshnichenko-4988143.jpg" />
+        </div>
+      </div>
+      <div class="heading-container">
+        <h1>Latest Release</h1>
+      </div>
+      <div class="latest-release">
+        <div class="latest-release-component">
+          <div class="release-box">
+            <div class="poster-img">
+              <img class="image-1" src="images/istockphoto-1577861625-1024x1024.jpg">
+            </div>
+            <div class="release-info">
+              <div class="text-above">Onism</div>
+              <div class="text-below">aug 11, 2019</div>
+            </div>
+            <div class="release-date">
+              <div class="text-above">...</div>
+              <div class="text-below">5:55</div>
+            </div>
+          </div>
+          <div class="release-box">
+            <div class="poster-img">
+              <img class="image-1" src="images/istockphoto-1577861625-1024x1024.jpg">
+            </div>
+            <div class="release-info">
+              <div class="text-above">Onism</div>
+              <div class="text-below">aug 11, 2019</div>
+            </div>
+            <div class="release-date">
+              <div class="text-above">...</div>
+              <div class="text-below">5:50</div>
+            </div>
+          </div>
+        </div>
+        <div class="latest-release-component">
+          <div class="release-box">
+            <div class="poster-img">
+              <img class="image-1" src="images/istockphoto-1577861625-1024x1024.jpg">
+            </div>
+            <div class="release-info">
+              <div class="text-above">Onism</div>
+              <div class="text-below">aug 11, 2019</div>
+            </div>
+            <div class="release-date">
+              <div class="text-above">...</div>
+              <div class="text-below">5:55</div>
+            </div>
+          </div>
+          <div class="release-box">
+            <div class="poster-img">
+              <img class="image-1" src="images/istockphoto-1577861625-1024x1024.jpg">
+            </div>
+            <div class="release-info">
+              <div class="text-above">Onism</div>
+              <div class="text-below">aug 11, 2019</div>
+            </div>
+            <div class="release-date">
+              <div class="text-above">...</div>
+              <div class="text-below">5:50</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="heading-container">
+        <h1>Popular Artist</h1>
+      </div>
+      <div class="box3">
+        <div class="popular-singer">
+          <a href="index.html">
+          <img class="Ed"
+            src="https://hips.hearstapps.com/hmg-prod/images/ed-sheeran-GettyImages-494227430_1600.jpg?crop=1xw:1.0xh;center,top&resize=1200:*" /></a>
+          <p class="singer">Ed Sheeran</p>
+        </div>
+        <div class="popular-singer">
+          <a href="index.html">
+          <img class="Ed"
+            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRSqoSEuV0lmNrEVLwJ6q75DaOWQjorN0b2G_BLJr4OScCX0YSZ" />
+            </a>
+          <p class="singer">Justin Bieber</p>
+        </div>
+        <div class="popular-singer">
+          <a href="index.html">
+          <img class="Ed"
+            src="http://t1.gstatic.com/images?q=tbn:ANd9GcRYCiEcIFFKiPIOaYYZfKLSlKeRnibtvyXJ-JQY27ehKqPXfFVPzLPyLp4Gty3IsbziJG8DOw" />
+            </a>
+          <p class="singer">Shreya Goshal</p>
+        </div>
+        <div class="popular-singer">
+          <a href="index.html">
+          <img class="Ed"
+            src="http://t0.gstatic.com/images?q=tbn:ANd9GcQaI4ZpmYLGSgmYCO9JKiEp1ZpfLvhhMpp1aqXV9fnCiUpKw3UA4I5W6Y1EyS2nSdRToLDdBw" />
+            </a>
+          <p class="singer">Sonu Nigam</p>
+        </div>
+        <div class="popular-singer">
+          <a href="index.html">
+          <img class="Ed"
+            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSLPAE3JCRfyqvtSZE0Wt5PBaLwPCopL11VN5COtXXaRj-04JOp" />
+            </a>
+          <p class="singer">Zyan Malik</p>
+        </div>
+        <div class="popular-singer">
+          <a href="index.html">
+          <img class="Ed" src="https://cdn.britannica.com/13/222713-050-ECDEDACE/Taylor-Swift-2019-Jingle-Ball.jpg" />
+          </a>
+          <p class="singer">Taylor Swift</p>
+        </div>
+      </div>
+      <div class="box4">
+        <div class="stair">
+          <img class="im"
+            src="https://images.pexels.com/photos/577769/pexels-photo-577769.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="music-theam">
+          <img class="image-2"
+            src="https://images.pexels.com/photos/288008/pexels-photo-288008.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="music-theam">
+          <img class="image-2"
+            src="https://images.pexels.com/photos/1539/vintage-technology-music-old.jpg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="music-theam">
+          <img class="image-2"
+            src="https://images.pexels.com/photos/91224/pexels-photo-91224.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="music-theam">
+          <img class="image-2"
+            src="https://images.pexels.com/photos/39671/physiotherapy-weight-training-dumbbell-exercise-balls-39671.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="music-theam">
+          <img class="image-2"
+            src="https://images.pexels.com/photos/811838/pexels-photo-811838.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="music-theam1">
+          <img class="image-2"
+            src="https://images.pexels.com/photos/949274/pexels-photo-949274.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+      </div>
+      <div class="box5">
+        <div class="music-mood">
+          <img class="image-3"
+            src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=600" />
+          <p class="music-type">Party</p>
+        </div>
+        <div class="music-mood">
+          <img class="image-3"
+            src="https://images.pexels.com/photos/860707/pexels-photo-860707.jpeg?auto=compress&cs=tinysrgb&w=600" />
+          <p class="music-type">Electronic</p>
+        </div>
+        <div class="music-mood">
+          <img class="image-3"
+            src="https://images.pexels.com/photos/17081332/pexels-photo-17081332/free-photo-of-cabriolet-on-dirt-road.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+          <p class="music-type">Road Trip</p>
+        </div>
+      </div>
+      <div class="heading-container">
+        <h1>English-Songs</h1>
+      </div>
+      <div class="box6">
+        <div class="english-song">
+          <img class="image-4"
+            src="https://images.pexels.com/photos/532168/pexels-photo-532168.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="english-song">
+          <img class="image-4"
+            src="https://images.pexels.com/photos/1463924/pexels-photo-1463924.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="english-song">
+          <img class="image-4"
+            src="https://images.pexels.com/photos/975680/pexels-photo-975680.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="english-song">
+          <img class="image-4"
+            src="https://images.pexels.com/photos/10660830/pexels-photo-10660830.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="english-song">
+          <img class="image-4"
+            src="https://media.istockphoto.com/id/481931460/photo/religious-offerings-on-river-ganges-and-oil-lamps-varanasi-india.jpg?b=1&s=612x612&w=0&k=20&c=cFOgy8TOKNWQAi3OvwqpadySUp_c1ldEmOz9aO6qMpQ=" />
+        </div>
+        <div class="english-song">
+          <img class="image-4"
+            src="https://images.pexels.com/photos/6231569/pexels-photo-6231569.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+      </div>
+      <div class="heading-container">
+        <h1>Hindi-songs</h1>
+      </div>
+      <div class="box7">
+        <div class="hindi-song">
+          <img class="image-5"
+            src="https://images.pexels.com/photos/532168/pexels-photo-532168.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="hindi-song">
+          <img class="image-5"
+            src="https://images.pexels.com/photos/1463924/pexels-photo-1463924.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="hindi-song">
+          <img class="image-5"
+            src="https://images.pexels.com/photos/975680/pexels-photo-975680.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="hindi-song">
+          <img class="image-5"
+            src="https://images.pexels.com/photos/10660830/pexels-photo-10660830.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+        <div class="hindi-song">
+          <img class="image-5"
+            src="https://media.istockphoto.com/id/481931460/photo/religious-offerings-on-river-ganges-and-oil-lamps-varanasi-india.jpg?b=1&s=612x612&w=0&k=20&c=cFOgy8TOKNWQAi3OvwqpadySUp_c1ldEmOz9aO6qMpQ=" />
+        </div>
+        <div class="hindi-song">
+          <img class="image-5"
+            src="https://images.pexels.com/photos/6231569/pexels-photo-6231569.jpeg?auto=compress&cs=tinysrgb&w=600" />
+        </div>
+      </div>
+    </div>
+    <div class="player-3">
+      <div class="queue">Queue
+        <div class="list-of-song">
+          <div class="lists">
+            <div class="lists-content">01</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/6231569/pexels-photo-6231569.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">Mirage</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">02</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/288008/pexels-photo-288008.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">new skin</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">03</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/1539/vintage-technology-music-old.jpg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">friends</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">04</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/811838/pexels-photo-811838.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">my way</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">05</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/6231569/pexels-photo-6231569.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">perfect</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">06</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/288008/pexels-photo-288008.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">Mirage</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">07</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/1539/vintage-technology-music-old.jpg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">friends</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">08</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/811838/pexels-photo-811838.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">my way</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">09</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/6231569/pexels-photo-6231569.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">perfect</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">10</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/288008/pexels-photo-288008.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">Mirage</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">11</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/811838/pexels-photo-811838.jpeg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">new skin</div>
+          </div>
+          <div class="lists">
+            <div class="lists-content">12</div>
+            <div class="lists-con"><img class="list-img"
+                src="https://images.pexels.com/photos/1539/vintage-technology-music-old.jpg?auto=compress&cs=tinysrgb&w=600">
+            </div>
+            <div class="lists-name">friends</div>
+          </div>
+        </div>
+      </div>
+      <div class="queue-1" id="dropdown">Queue
+        <i class="fa-solid fa-chevron-down" id="chevron"></i>
+        <div class="playlist-content" id="playlistContent">
+          <h3 id="playlist">Playlists</h3>
+          <h3 id="playlist">Favourite-song</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="songs-to-play">
+    <div class="song-name">
+      <img class="song-img" src="https://images.pexels.com/photos/2613260/pexels-photo-2613260.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <div class="singer-name">
+        <div class="name-1">Imagin by joh</div>
+        <div class="singer-1">John lennon</div>
+      </div>
+    </div>
+    <div class="song-name">
+      <audio class="audio-play" controls>
+        <source src="/audio/song-1 (2).mp3" type="audio/ogg">
+        <source src="/audio/song-2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+    <div class="song-name">
+      <img class="voice-icon" src="https://w7.pngwing.com/pngs/414/409/png-transparent-audio-sound-speaker-button-voice-loudspeaker-loud-media-icon-symbol.png">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRozk4SDYXUzYNpH_ZIKeEupqw-5UFRjP_ysxv29YILw2es8x7NtkcZug6UeWQmVgiAo8o&usqp=CAU">
+    </div>
+  </div>
+</body>
+
+</html>
